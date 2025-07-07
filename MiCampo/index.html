@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distrisur del Valle: Tienda de productos veterinarios</title>
+    <meta name="description" content="tienda de productos Agro"> 
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="icon" href="" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="container-header">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo-distrisur.png" alt="Logo de la empresa">
+                    </a>
+                </div>
+
+                <nav class="main-nav">
+                    <input type="checkbox" id="menu-toggle">
+                    <label for="menu-toggle" class="menu-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <ul class="menu">
+                        <li><a href="index.html" class="btn-menu btn-select">Inicio</a></li>
+                        <li><a href="productos.html" class="btn-menu ">Productos</a></li>
+                        <li><a href="#contacto" class="btn-menu">Contacto</a></li>
+                        <!-- <li><a href="#noticias" class="btn-menu">Noticias</a></li> -->
+                        <li><a href="#nosotros" class="btn-menu">Nosotros</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main  class="contenedor">
+           <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slide">
+                        <img src="img/imagencover-1.jpeg" alt="Paisaje 1">
+                    </div>
+                    <div class="slide">
+                        <img src="img/imagencover-2.jpeg" alt="Paisaje 2">
+                    </div>
+                    <div class="slide">
+                        <img src="img/imagencover-3.jpeg" alt="Paisaje 3">
+                    </div>
+             </div>
+                 <a href="productos.html" class="btn-slider">Ver todos los Productos</a>
+
+        <div class="slider-dots"></div>
+    </div>
+    <section class="titulo">
+        <div class="productos-titulo">
+                <h1>Tienda de productos veterinarios de la más alta calidad</h1>
+            </div>
+    </section>
+
+    <section class="marcas">
+    <div class="marcas-container">
+        <img src="img/marca1.png" alt="Logo Marca 1">
+        <img src="img/marca2.png" alt="Logo Marca 2">
+        <img src="img/marca3.png" alt="Logo Marca 3">
+        <img src="img/marca4.png" alt="Logo Marca 4">
+        <img src="img/marca5.webp" alt="Logo Marca 5">
+    </div>
+    </section>
+
+    <section class="productos-destacados">
+        <h2>productos destacados</h2>
+        <nav class="content-productosdestacados">
+            <div class="grid-productos">
+                    
+            </div>
+        </nav>
+         <div class="ver-todos-container">
+        <a href="productos.html" class="btn-secundario">Ver Todos los Productos</a>
+    </div>
+    </section>
+
+    <section class="seccion-ubicacion">
+    <div class="informacion__ubicacion">
+        <div class="texto_mapa">
+            <h2>Encuéntranos</h2>
+            <p>Visita nuestra tienda física para una atención personalizada.</p>
+            <p><strong>Dirección:</strong> Calle Falsa 123, Cali, Colombia</p>
+            <p><strong>Horario:</strong> Lunes a Viernes de 8:00 AM a 5:00 PM</p>
+        </div>
+        <div class="mapa-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.594191374528!2d-76.5346473857398!3d3.44756285153202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a66143f25c2d%3A0x6730a9113274b7c8!2sCali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1672874983291!5m2!1ses!2sco" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Distrisur del Valle - todos los derechos reservados</p>
+    </footer>
+
+    <div id="whatsapp-flotante-container"></div>
+    <script src="js/database.js"></script> 
+    <script src="js/main.js"></script> 
+    <script src="js/script.js"></script>
+    <script src="js/script-wpp-btn.js"></script>
+    <script src="js/headerscroll.js"></script>
+</body>
+</html>
