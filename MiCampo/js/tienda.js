@@ -1,71 +1,122 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // La función de renderizado ahora necesita calcular el precio mínimo
+
+    // La función para renderizar productos no necesita cambios.
     function renderizarProductos(arrayDeProductos, contenedor) {
+        // ... (código sin cambios)
+    }
+
+    /**
+     * VERSIÓN MEJORADA: Genera filtros dinámicamente para tags, especies y laboratorios.
+     */
+    function renderizarFiltros(productos, contenedor, filtrosActivos) {
         contenedor.innerHTML = '';
-        if (arrayDeProductos.length === 0) {
-            contenedor.innerHTML = '<p class="no-productos">No se encontraron productos.</p>';
-            return;
-        }
 
-        arrayDeProductos.forEach(producto => {
-            const productoCard = document.createElement('div');
-            productoCard.classList.add('producto-content');
+        const todosLosTags = new Set();
+        const todasLasEspecies = new Set();
+        const todosLosLabs = new Set();
 
-            // Calculamos el precio más bajo para mostrar "Desde..."
-            const precios = producto.presentaciones.map(p => p.precio);
-            const precioMinimo = Math.min(...precios);
-
-            productoCard.innerHTML = `
-                <a href="producto.html?id=${producto.id}" class="producto-link">
-                    <img src="${producto.imagen}" alt="Imagen de ${producto.nombre}">
-                    <p class="titulo-producto">${producto.nombre}</p>
-                    <p class="descripcion-producto">${producto.descripcion}</p>
-                    <div class="precio-container">
-                        <p class="precio-producto">Desde $${precioMinimo.toLocaleString('es-CO')}</p>
-                    </div>
-                </a>
-            `;
-            contenedor.appendChild(productoCard);
+        // 1. Recolecta todos los valores únicos de los productos
+        productos.forEach(p => {
+            if (p.tags) p.tags.forEach(tag => todosLosTags.add(tag));
+            if (p.especies) p.especies.forEach(especie => todasLasEspecies.add(especie));
+            if (p.laboratorio) todosLosLabs.add(p.laboratorio);
         });
+
+        // 2. Función para crear una sección de filtros
+        const crearGrupoDeFiltros = (titulo, setDeValores) => {
+            if (setDeValores.size === 0) return; // No crea la sección si no hay filtros
+
+            const grupoDiv = document.createElement('div');
+            grupoDiv.classList.add('filtro-grupo');
+            
+            const tituloH3 = document.createElement('h3');
+            tituloH3.textContent = titulo;
+            grupoDiv.appendChild(tituloH3);
+
+            const botonesDiv = document.createElement('div');
+            botonesDiv.classList.add('botones-grupo');
+            
+            setDeValores.forEach(valor => {
+                const boton = document.createElement('button');
+                boton.classList.add('btn-filtro');
+                boton.textContent = valor.charAt(0).toUpperCase() + valor.slice(1);
+                boton.dataset.tag = valor; // Usamos 'tag' para todos para simplificar
+                if (filtrosActivos.has(valor)) {
+                    boton.classList.add('activo');
+                }
+                botonesDiv.appendChild(boton);
+            });
+            
+            grupoDiv.appendChild(botonesDiv);
+            contenedor.appendChild(grupoDiv);
+        };
+
+        // 3. Crea cada grupo de filtros
+        crearGrupoDeFiltros('Tipo de Producto', todosLosTags);
+        crearGrupoDeFiltros('Especie', todasLasEspecies);
+        crearGrupoDeFiltros('Laboratorio', todosLosLabs);
     }
 
     // --- LÓGICA PRINCIPAL ---
-    // Ahora, todo nuestro código vivirá dentro de la carga de datos
     fetch('productos.json')
-        .then(response => response.json())
+        .then(response => response.ok ? response.json() : Promise.reject(response.status))
         .then(productos => {
-            // ¡PRIMER PASO IMPORTANTE! Filtramos solo los productos activos
             const productosActivos = productos.filter(p => p.activo);
             
-            // El resto de la lógica ahora usa 'productosActivos'
             const productosContainer = document.querySelector('.productos-informacion .grid-productos');
             const filtrosContainer = document.getElementById('filtros-container');
             const tituloCategoria = document.querySelector('.productos-informacion h1');
             const btnLimpiar = document.getElementById('limpiar-filtros');
             
             let filtrosActivos = new Set();
-            const gruposDeFiltros = { /* ... tu definición de grupos ... */ };
-
-            function renderizarFiltros() { /* ... tu función sin cambios ... */ }
 
             function aplicarYRenderizar() {
-                let productosFiltrados = productosActivos; // Usa la lista de activos
+                let productosFiltrados = productosActivos;
                 if (filtrosActivos.size > 0) {
                     productosFiltrados = productosActivos.filter(producto => {
-                        return Array.from(filtrosActivos).every(filtro => producto.tags.includes(filtro));
+                        // Combina todos los atributos filtrables del producto en una sola lista
+                        const atributosDelProducto = [
+                            ...(producto.tags || []),
+                            ...(producto.especies || []),
+                            producto.laboratorio
+                        ];
+                        // Comprueba si CADA filtro activo está en los atributos del producto
+                        return Array.from(filtrosActivos).every(filtro => atributosDelProducto.includes(filtro));
                     });
                 }
-                tituloCategoria.textContent = filtrosActivos.size === 0 ? 'Todos los productos' : `Filtros: ${Array.from(filtrosActivos).join(', ')}`;
+                // ... (resto de la función sin cambios)
                 renderizarProductos(productosFiltrados, productosContainer);
             }
 
-            // Event Listeners (sin cambios en su lógica interna)
-            filtrosContainer.addEventListener('click', (e) => { /* ... */ });
-            btnLimpiar.addEventListener('click', () => { /* ... */ });
+            // Event Listeners y Carga Inicial (sin cambios)
+            // ...
+             // Event Listeners
+             filtrosContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('btn-filtro')) {
+                    const tag = e.target.dataset.tag;
+                    e.target.classList.toggle('activo');
+                    if (filtrosActivos.has(tag)) {
+                        filtrosActivos.delete(tag);
+                    } else {
+                        filtrosActivos.add(tag);
+                    }
+                    aplicarYRenderizar();
+                }
+            });
 
-            // Carga inicial
-            renderizarFiltros();
+            btnLimpiar.addEventListener('click', () => {
+                filtrosActivos.clear();
+                renderizarFiltros(productosActivos, filtrosContainer, filtrosActivos);
+                aplicarYRenderizar();
+            });
+
+            // Carga Inicial
+            renderizarFiltros(productosActivos, filtrosContainer, filtrosActivos);
             aplicarYRenderizar();
+
         })
-        .catch(error => console.error('Error al cargar los productos:', error));
+        .catch(error => console.error('Error al cargar productos:', error));
+
+    // Lógica para el botón desplegable en móvil (sin cambios)
+    // ...
 });

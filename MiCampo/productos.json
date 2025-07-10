@@ -4,38 +4,42 @@
     "nombre": "Fertilizante Crecimiento Plus",
     "descripcion": "Potente fertilizante para una fase de crecimiento vigorosa y saludable.",
     "imagen": "img/producto1.png",
-    "tags": ["fertilizantes", "modificadores", "crecimiento"],
+    "tags": ["fertilizantes", "modificadores"],
     "destacado": true,
     "activo": true,
+    "laboratorio": "CampoFértil",
+    "especies": [],
     "presentaciones": [
-      { "nombre": "500 gr", "precio": 55900, "descuento": 25 },
       { "nombre": "1 kg", "precio": 95000, "descuento": 15 },
-      { "nombre": "5 kg", "precio": 420000, "descuento": 0 }
+      { "nombre": "2 kg", "precio": 125000, "descuento": 15 }
     ]
   },
   {
     "id": 2,
-    "nombre": "Sustrato Premium Pro",
-    "descripcion": "Mezcla de sustrato aireada y rica en nutrientes para todo tipo de cultivos.",
-    "imagen": "img/producto2.png",
-    "tags": ["sustratos", "modificadores"],
-    "destacado": true,
+    "nombre": "Vitamina Equina Plus",
+    "descripcion": "Suplemento vitamínico para el rendimiento y salud de los equinos.",
+    "imagen": "img/producto3.png",
+    "tags": ["suplementos", "vitaminas"],
+    "destacado": false,
     "activo": true,
+    "laboratorio": "AgroSalud",
+    "especies": ["equinos", "bovinos"],
     "presentaciones": [
-      { "nombre": "20 L", "precio": 42500, "descuento": 0 },
-      { "nombre": "50 L", "precio": 89900, "descuento": 10 }
+      { "nombre": "1 L", "precio": 120000, "descuento": 0 }
     ]
   },
   {
     "id": 3,
-    "nombre": "Trampa de Moscas para Establos",
-    "descripcion": "Este producto ya no está disponible.",
-    "imagen": "img/producto3.png",
-    "tags": ["trampas", "protectores", "bovinos"],
-    "destacado": false,
-    "activo": false,
+    "nombre": "Pipeta Antipulgas Canina",
+    "descripcion": "Protección mensual contra pulgas y garrapatas para perros.",
+    "imagen": "img/producto2.png",
+    "tags": ["protectores", "antipulgas"],
+    "destacado": true,
+    "activo": true,
+    "laboratorio": "VetAnimal",
+    "especies": ["mascotas"],
     "presentaciones": [
-      { "nombre": "Unidad", "precio": 38000, "descuento": 0 }
+      { "nombre": "1 pipeta", "precio": 35000, "descuento": 10 }
     ]
   }
 ]
