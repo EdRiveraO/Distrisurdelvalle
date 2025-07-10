@@ -1,69 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Obtener el ID del producto de la URL
-    const params = new URLSearchParams(window.location.search);
-    const productoId = parseInt(params.get('id'));
-
-    // 2. Encontrar el producto en nuestra base de datos
-    const producto = productos.find(p => p.id === productoId);
     const container = document.getElementById('producto-detalle-container');
 
-    if (producto) {
-        // 3. Si encontramos el producto, actualizamos la página
-        document.title = `MiCampoApp - ${producto.nombre}`;
+    fetch('productos.json')
+        .then(response => response.json())
+        .then(productos => {
+            const params = new URLSearchParams(window.location.search);
+            const productoId = parseInt(params.get('id'));
+            const producto = productos.find(p => p.id === productoId);
 
-        // Prepara el HTML para las etiquetas (tags)
-        const tagsHTML = producto.tags.map(tag => 
-            `<span class="tag-detalle">${tag.charAt(0).toUpperCase() + tag.slice(1)}</span>`
-        ).join('');
+            if (producto && producto.activo) {
+                document.title = `MiCampoApp - ${producto.nombre}`;
 
-        // --- ¡NUEVA LÓGICA DE DESCUENTO! ---
-        let precioHTML = '';
+                // Generar opciones para el <select>
+                const opcionesPresentaciones = producto.presentaciones.map((pres, index) => 
+                    `<option value="${index}">${pres.nombre}</option>`
+                ).join('');
 
-        if (producto.descuento && producto.descuento > 0) {
-            // Si hay descuento, calcula el nuevo precio
-            const precioConDescuento = producto.precio * (1 - producto.descuento / 100);
-            
-            // Y prepara el HTML con ambos precios
-            precioHTML = `
-                <p class="precio-original">$${producto.precio.toLocaleString('es-CO')}</p>
-                <p class="detalle-precio">$${Math.round(precioConDescuento).toLocaleString('es-CO')}</p>
-            `;
-        } else {
-            // Si no hay descuento, prepara el HTML del precio normal
-            precioHTML = `<p class="detalle-precio">$${producto.precio.toLocaleString('es-CO')}</p>`;
-        }
+                container.innerHTML = `
+                    <a href="javascript:history.back()" class="btn-volver">← Volver</a>
+                    <div class="detalle-imagen">
+                        <img src="${producto.imagen}" alt="${producto.nombre}">
+                    </div>
+                    <div class="detalle-info">
+                        <h1 class="detalle-nombre">${producto.nombre}</h1>
+                        <p class="detalle-descripcion">${producto.descripcion}</p>
+                        <label for="presentaciones-select">Elige una presentación:</label>
+                        <select id="presentaciones-select">${opcionesPresentaciones}</select>
+                        <div id="precio-dinamico-container"></div>
+                    </div>
+                `;
 
-        // 4. Llenamos el contenedor con toda la información
-        container.innerHTML = 
-        `
-    <a href="javascript:history.back()" class="btn-volver">← Volver a la lista</a>
-    
-    <div class="detalle-imagen">
-        <img src="${producto.imagen}" alt="Imagen de ${producto.nombre}">
-    </div>
+                const selectPresentaciones = document.getElementById('presentaciones-select');
+                const precioContainer = document.getElementById('precio-dinamico-container');
 
-    <div class="detalle-info">
-        <div class="detalle-tags-container">
-            ${tagsHTML}
-        </div>
+                // Función para actualizar el precio
+                function actualizarPrecio() {
+                    const presentacionSeleccionada = producto.presentaciones[selectPresentaciones.value];
+                    let precioHTML = '';
 
-        <h1 class="detalle-nombre">${producto.nombre}</h1>
-        <p class="detalle-descripcion">${producto.descripcion}</p>
-        
-        <div class="precio-container-detalle">
-            ${precioHTML}
-        </div>
+                    if (presentacionSeleccionada.descuento > 0) {
+                        const precioFinal = presentacionSeleccionada.precio * (1 - presentacionSeleccionada.descuento / 100);
+                        precioHTML = `
+                            <p class="precio-original">$${presentacionSeleccionada.precio.toLocaleString('es-CO')}</p>
+                            <p class="detalle-precio">$${Math.round(precioFinal).toLocaleString('es-CO')}</p>
+                        `;
+                    } else {
+                        precioHTML = `<p class="detalle-precio">$${presentacionSeleccionada.precio.toLocaleString('es-CO')}</p>`;
+                    }
+                    precioContainer.innerHTML = precioHTML;
+                }
 
-        <a href="https://api.whatsapp.com/send?phone=+573222379328&text=Hola!%20Estoy%20interesado%20en%20el%20producto:%20${encodeURIComponent(producto.nombre)}"
-           target="_blank"
-           class="btn-comprar">
-           Consultar por WhatsApp
-        </a>
-    </div>
-`;
+                // Listener para cambiar el precio al seleccionar otra opción
+                selectPresentaciones.addEventListener('change', actualizarPrecio);
 
-    } else {
-        // 5. Si el producto no existe, mostramos un error
-        container.innerHTML = '<h1>Error 404: Producto no encontrado</h1><p>El producto que buscas no existe. <a href="index.html">Volver al inicio</a>.</p>';
-    }
+                // Mostrar el precio de la primera presentación al cargar
+                actualizarPrecio();
+            } else {
+                container.innerHTML = '<h1>Producto no encontrado o no disponible</h1>';
+            }
+        });
 });

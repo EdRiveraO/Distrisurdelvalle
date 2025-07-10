@@ -1,63 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Renderizar productos destacados en el index
-    // Verificamos si estamos en la página de inicio buscando el contenedor específico
-    const destacadosContainer = document.querySelector('.productos-destacados .grid-productos');
-    if (destacadosContainer) {
-        // Filtramos el array para obtener solo los productos destacados
-        const productosDestacados = productos.filter(producto => producto.destacado === true);
-        renderizarProductos(productosDestacados, destacadosContainer);
-    }
-});
 
-/**
- * Función para renderizar productos en el DOM.
- * @param {Array} arrayDeProductos - El array de productos a mostrar.
- * @param {HTMLElement} contenedor - El elemento HTML donde se insertarán los productos.
- */
-function renderizarProductos(arrayDeProductos, contenedor) {
-    contenedor.innerHTML = ''; // Limpia el contenido anterior
-    if (arrayDeProductos.length === 0) {
-        contenedor.innerHTML = '<p class="no-productos">No se encontraron productos.</p>';
-        return;
-    }
-
-    arrayDeProductos.forEach(producto => {
-        const productoCard = document.createElement('div');
-        productoCard.classList.add('producto-content');
-
-        // --- LÓGICA DE DESCUENTO ---
-        let etiquetaDescuentoHTML = '';
-        let precioHTML = '';
-
-        // Comprueba si el producto tiene un descuento válido
-        if (producto.descuento && producto.descuento > 0) {
-            // 1. Prepara la etiqueta de descuento
-            etiquetaDescuentoHTML = `<span class="etiqueta-descuento">${producto.descuento}% DCTO</span>`;
-
-            // 2. Calcula el nuevo precio
-            const precioConDescuento = producto.precio * (1 - producto.descuento / 100);
-
-            // 3. Prepara el HTML de los precios
-            precioHTML = `
-                <p class="precio-original">$${producto.precio.toLocaleString('es-CO')}</p>
-                <p class="precio-descuento">$${Math.round(precioConDescuento).toLocaleString('es-CO')}</p>
-            `;
-        } else {
-            // Si no hay descuento, muestra el precio normal
-            precioHTML = `<p class="precio-producto">$${producto.precio.toLocaleString('es-CO')}</p>`;
+    /**
+     * Dibuja las tarjetas de productos en un contenedor.
+     */
+    function renderizarProductosDestacados(productos, contenedor) {
+        contenedor.innerHTML = ''; // Limpia el contenedor
+        if (productos.length === 0) {
+            contenedor.innerHTML = '<p>No hay productos destacados en este momento.</p>';
+            return;
         }
 
-        // --- CONSTRUCCIÓN FINAL DE LA TARJETA ---
-        productoCard.innerHTML = `
-            <a href="producto.html?id=${producto.id}" class="producto-link">
-                ${etiquetaDescuentoHTML}
-                <img src="${producto.imagen}" alt="Imagen de ${producto.nombre}">
-                <p class="titulo-producto">${producto.nombre}</p>
-                <p class="descripcion-producto">${producto.descripcion}</p>
-                <div class="precio-container">${precioHTML}</div>
-            </a>
-        `;
-        
-        contenedor.appendChild(productoCard);
-    });
-}
+        productos.forEach(producto => {
+            const productoCard = document.createElement('div');
+            productoCard.classList.add('producto-content');
+
+            // Calcula el precio más bajo para mostrar "Desde..."
+            const precios = producto.presentaciones.map(p => p.precio);
+            const precioMinimo = Math.min(...precios);
+
+            productoCard.innerHTML = `
+                <a href="producto.html?id=${producto.id}" class="producto-link">
+                    <img src="${producto.imagen}" alt="Imagen de ${producto.nombre}">
+                    <p class="titulo-producto">${producto.nombre}</p>
+                    <p class="descripcion-producto">${producto.descripcion}</p>
+                    <div class="precio-container">
+                        <p class="precio-producto">Desde $${precioMinimo.toLocaleString('es-CO')}</p>
+                    </div>
+                </a>
+            `;
+            contenedor.appendChild(productoCard);
+        });
+    }
+
+    // --- LÓGICA PRINCIPAL ---
+    const destacadosContainer = document.querySelector('.productos-destacados .grid-productos');
+
+    if (destacadosContainer) {
+        fetch('productos.json')
+            .then(response => response.json())
+            .then(data => {
+                // Filtramos por productos que son activos Y destacados
+                const productosDestacados = data.filter(p => p.activo && p.destacado);
+                
+                // Los dibujamos en la página
+                renderizarProductosDestacados(productosDestacados, destacadosContainer);
+            })
+            .catch(error => {
+                console.error('Error al cargar productos destacados:', error);
+                destacadosContainer.innerHTML = '<p>No se pudieron cargar los productos.</p>';
+            });
+    }
+});
