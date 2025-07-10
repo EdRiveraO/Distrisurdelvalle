@@ -1,23 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('producto-detalle-container');
 
-    // 1. Cargar los datos desde el archivo JSON
-    fetch('../productos.json') // Usamos ../ para subir un nivel desde la carpeta js
+    // --- CORRECCIÓN AQUÍ ---
+    // Añadimos ../ para indicarle que suba un nivel de carpeta
+    fetch('../productos.json') 
         .then(response => {
             if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
             return response.json();
         })
         .then(productos => {
-            // 2. Obtener el ID del producto de la URL
             const params = new URLSearchParams(window.location.search);
             const productoId = parseInt(params.get('id'));
             const producto = productos.find(p => p.id === productoId);
 
-            // 3. Renderizar el producto si es válido y está activo
             if (producto && producto.activo) {
                 document.title = `Distrisur del Valle - ${producto.nombre}`;
 
-                // 4. Generar el HTML
+                // Generar opciones para el <select>
                 const opcionesPresentaciones = producto.presentaciones.map((pres, index) => 
                     `<option value="${index}">${pres.nombre}</option>`
                 ).join('');
@@ -43,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
 
-                // 5. Lógica para actualizar el precio dinámicamente
                 const selectPresentaciones = document.getElementById('presentaciones-select');
                 const precioContainer = document.getElementById('precio-dinamico-container');
 
@@ -64,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 selectPresentaciones.addEventListener('change', actualizarPrecio);
-                actualizarPrecio(); // Mostrar precio inicial
+                actualizarPrecio(); 
 
             } else {
                 container.innerHTML = '<h1>Producto no encontrado o no disponible</h1>';

@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- LÓGICA PRINCIPAL ---
-    fetch('productos.json')
+    fetch('../productos.json')
         .then(response => response.ok ? response.json() : Promise.reject(response.status))
         .then(productos => {
             const productosActivos = productos.filter(p => p.activo);
