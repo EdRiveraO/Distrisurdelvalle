@@ -1,0 +1,1043 @@
+:root{
+  --fuente: "Poppins", sans-serif;
+  --color-primario: #0b3607;
+  --color-blanco: #f7f7f7;
+  --color-gris: #e6e6e6;
+  --color-naranja: #D94F13;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/* ============================================= */
+/* ESTILOS BASE PARA ENCABEZADOS (TIPOGRAFÍA)
+/* ============================================= */
+
+h1, h2, h3, h4, h5, h6 {
+    /* Define estilos que todos los encabezados compartirán */
+    font-weight: 700; /* O el grosor que prefieras por defecto */
+    line-height: 1.2;
+    color: var(--color-primario); /* Usando tus variables de color */
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Ahora, define un tamaño específico para cada nivel de encabezado */
+h1 {
+    font-size:3rem;
+}
+
+h2 {
+    font-size: 3.4rem;
+}
+
+// h3 {
+//     font-size: 2.8rem;
+// }
+
+h4 {
+    font-size: 2.2rem;
+}
+
+/* Puedes añadir h5 y h6 si los llegas a usar */
+h5 {
+    font-size: 1.8rem;
+}
+
+h6 {
+    font-size: 1.6rem;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-blanco);
+    font-size: 1.6rem;
+    font-family: var(--fuente);
+    line-height: 1.5;
+    min-height: 100vh; /* El body ocupa, como mínimo, toda la altura de la pantalla */
+ 
+}
+
+.contenedor{
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 0 1.5rem;
+}
+@media (min-width: 768px) {
+     .contenedor{
+        margin: 0 3rem;
+     }
+}
+
+/* .boton-productos{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    justify-content: center;
+    background-color: var(--color-primario); 
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.8s ease, transform 0.3s ease;
+    z-index: 10; 
+} */
+
+/* --- Menú Hamburguesa (oculto en escritorio) --- */
+#menu-toggle,
+.menu-icon {
+    display: none;
+}
+
+
+/* --- Contenedor Principal --- */
+.slider-container {
+    width: 100%;
+    height: 350px; /* 70% de la altura de la pantalla */
+    position: relative; /* Clave para posicionar los puntos */
+    overflow: hidden; /* Oculta las imágenes que no están activas */
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    touch-action: pan-y; 
+}
+@media (max-width: 768px) {
+    .slider-container{
+        height: 200px;
+        border-radius: 5px;
+        margin: 1rem 0;
+    }
+}
+
+/* --- Contenedor de las Imágenes --- */
+.slider-wrapper {
+    display: flex; /* Pone las imágenes en una fila horizontal */
+    height: 100%;
+    /* La transición que crea el efecto de deslizamiento */
+    transition: transform 0.8s ease-in-out;
+}
+
+/* --- Cada Imagen (Slide) --- */
+.slide {
+    min-width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+    filter: brightness(0.8);
+
+}
+
+/* --- Círculos de Navegación --- */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px; /* Espacio entre los puntos */
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Estilo del punto activo */
+.dot.active {
+    background-color: #ffffff;
+}
+.productos-titulo h3{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+}
+@media (max-width: 768px) {
+    .productos-titulo h3{
+        text-align: center;
+        font-size: 1.5rem;
+
+    }
+}
+
+/* Footer */
+.footer{
+    background-color: var(--color-primario);
+    padding: 1rem 0;
+    margin-top: 2rem;
+    width: 100%;
+  
+}
+.footer__texto{
+    color: var(--color-blanco);
+    text-align: center;
+    font-size: 1rem;
+}
+/* Footer */
+
+
+/* ... añade esto al final de tu style.css ... */
+
+/* Mapa */
+.seccion-ubicacion {
+    margin-top: 4rem;
+    padding: 4rem 0;
+    background-color: var(--color-gris);
+}
+
+.informacion__ubicacion {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna por defecto para móviles */
+    gap: 3rem;
+    align-items: center;
+    max-width: 1200px; /* Limita el ancho en pantallas grandes */
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+    .informacion__ubicacion {
+         /* Dos columnas en tablets y escritorio */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.texto_mapa h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.mapa-container {
+    overflow: hidden; /* Asegura que el iframe no se desborde */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    /* Mantiene la proporción del video/mapa */
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* Proporción 4:3 (75%) o 56.25% para 16:9 */
+}
+
+.mapa-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Quita el borde feo del iframe */
+}
+
+/* Ajusta los estilos de los productos que ya tenías */
+.productos-destacados {
+    background-color: transparent; /* Quita el fondo gris si no lo quieres */
+    width: 100%;
+    min-height: 300px; /* Usa min-height para que se ajuste al contenido */
+    text-align: center;
+}
+
+.productos-destacados h2{
+    font-size: 2rem;
+    background-color: var(--color-primario);
+    margin: 1rem 0 1rem 0;
+    border-radius: 10px 10px 0px 0px;
+    color: var(--color-blanco);
+    padding: 0.5rem 0;
+}
+@media (min-width: 768px) {
+    .productos-destacados h2{
+        max-width: 400px;
+        border-radius: 0px 20px 00px 0px;
+    }
+     
+}
+/* Estilos para el nuevo botón en el slider */
+
+
+/* Contenedor para centrar el botón */
+.ver-todos-container {
+    text-align: center;
+    margin-top: 3rem; /* Espacio arriba del botón */
+}
+
+/* Estilo para un botón secundario o de "ver más" */
+.btn-secundario {
+    display: inline-block; /* Para que el padding funcione correctamente */
+    border: 2px solid var(--color-primario);
+    color: var(--color-primario);
+    background-color: transparent;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-secundario:hover {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+
+/* ============================================= */
+/* SECCIÓN MARCAS PRO (NUEVO DISEÑO)
+/* ============================================= */
+.seccion-marcas-pro {
+    padding: 6rem 0;
+    background-color: var(--color-blanco);
+    border-top: 1px solid var(--color-gris);
+    border-bottom: 1px solid var(--color-gris);
+}
+
+.seccion-marcas-pro h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4rem;
+}
+
+.logos-container {
+    overflow: hidden; /* Oculta el desbordamiento del carrusel */
+    position: relative;
+    width: 100%;
+}
+
+/* Efecto de degradado en los bordes para un look más suave */
+.logos-container::before,
+.logos-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+.logos-container::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0), var(--color-blanco));
+}
+.logos-container::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0), var(--color-blanco));
+}
+
+.logos-slider {
+    display: flex;
+    /* Ancho total: (ancho por logo + gap) * número total de logos */
+    /* Ej: (180px + 30px) * 10 logos = 2100px */
+    width: calc(180px * 10 + 3rem * 10);
+    gap: 3rem;
+    
+    /* ¡La animación! */
+    animation: scroll 30s linear infinite;
+}
+
+/* Pausar la animación al pasar el mouse por encima */
+.logos-slider:hover {
+    animation-play-state: paused;
+}
+
+/* Estilo para cada logo */
+.logos-slider img {
+    height: 50px; /* Altura unificada */
+    width: 180px; /* Ancho unificado */
+    object-fit: contain; /* Asegura que no se deformen */
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.logos-slider img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Definición de la animación de scroll */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Se mueve la mitad de su ancho (la lista original) */
+        transform: translateX(calc(-180px * 5 - 3rem * 5));
+    }
+}
+
+
+
+/* Para pantallas de tablets y móviles (hasta 1024px de ancho) */
+@media (max-width: 1024px) {
+  
+  /* Hacemos que los puntos del slider ignoren cualquier clic o toque */
+  .slider-dots {
+    pointer-events: none;
+  }
+
+}
+
+
+
+/* 1. Contenedor Principal (lo llamamos swiper-container para aplicar los estilos de la caja) */
+.swiper-container {
+    width: 100%;
+    height: 500px;
+    position: relative; /* ¡CLAVE! Para posicionar el botón y los puntos */
+    margin: 2rem auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    overflow: hidden; /* Para que las esquinas redondeadas se apliquen a las imágenes */
+}
+
+/* El contenedor interno de Swiper debe ocupar todo el espacio */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+/* 2. Estilo para las imágenes dentro de cada slide */
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la imagen cubriendo el espacio sin deformarse */
+    filter: brightness(0.8);
+}
+
+
+/* 3. Estilo para los Puntos de Navegación */
+/* Swiper usa .swiper-pagination para el contenedor de los puntos */
+.swiper-pagination {
+    position: absolute;
+    bottom: 20px !important; /* !important para sobreescribir el estilo base de Swiper */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* Swiper usa .swiper-pagination-bullet para cada punto individual */
+.swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 1; /* Asegurarnos que siempre sea visible */
+    transition: background-color 0.3s ease;
+}
+
+/* Swiper usa .swiper-pagination-bullet-active para el punto activo */
+.swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #ffffff;
+}
+
+
+/* 4. Estilo para el Botón Central (¡Funciona exactamente igual!) */
+.btn-slider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-slider:hover {
+    background-color: #0f4a0a;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+@media (min-width: 768px) {
+     .btn-slider{
+        font-size: 2rem;
+        padding: 15px 30px;
+     }
+}
+
+/* ============================================= */
+/* 7. SECCIÓN UBICACIÓN HÍBRIDA (DISEÑO FINAL)
+/* ============================================= */
+.seccion-ubicacion-hibrida {
+    padding: 8rem 0;
+    background-color: var(--color-blanco);
+    border-top: 1px solid var(--color-gris);
+}
+
+.grid-ubicacion {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna por defecto (móvil) */
+    gap: 4rem;
+    align-items: center;
+}
+
+/* En pantallas de 768px o más (tablets y escritorio)... */
+@media (min-width: 768px) {
+    .grid-ubicacion {
+        grid-template-columns: 1fr 1fr;
+        /* --- LÍNEAS NUEVAS PARA CENTRAR EL BLOQUE --- */
+        max-width: 980px; /* Le damos un ancho máximo más pequeño que el contenedor principal */
+        margin: 0 auto;   /* Centramos este contenedor de grid */
+    }
+}
+
+/* Estilos para la columna de información */
+.info-columna h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+.info-columna p {
+    font-size: 1.8rem;
+    color: #1d1d1d;
+    margin-bottom: 3rem;
+}
+.lista-contacto {
+    list-style: none;
+    padding: 0;
+}
+.lista-contacto .txt-contacto {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+.lista-contacto strong {
+    font-weight: 600;
+    color: var(--color-texto);
+}
+.lista-contacto span {
+    color: #1d1d1d;
+}
+
+/* Estilos para la columna del mapa */
+.mapa-columna {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mapa-circular-container {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid var(--color-blanco);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+.mapa-circular-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 767px) {
+    
+       /* Con solo esta línea, todo el texto adentro se centrará */
+    .info-columna {
+        text-align: center; 
+    }
+}
+/* ============================================= */
+/* 6. FOOTER (NUEVO DISEÑO)
+/* ============================================= */
+.footer {
+    background-color: var(--color-primario);
+    color: #e0e0e0;
+    padding: 6rem 0 0;
+}
+.grid-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 4rem;
+    padding-bottom: 4rem;
+}
+.footer-columna h3 {
+    font-size: 2rem;
+    color: var(--color-blanco);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+.footer-logo {
+    max-width: 180px;
+    margin-bottom: 1.5rem;
+}
+.footer-columna p {
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+.footer-columna ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-columna ul li {
+    margin-bottom: 1rem;
+}
+.footer-columna ul a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.footer-columna ul a:hover {
+    color: var(--color-acento);
+    padding-left: 5px;
+}
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.social-links a {
+    color: var(--color-primario);
+    background-color: var(--color-blanco);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.8rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.social-links a:hover {
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    transform: translateY(-3px);
+}
+.footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #a0a0a0;
+}
+
+#top-bar {
+    background-color: var(--color-primario); /* Tu color verde principal */
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 200;
+    width: 100%;
+}
+
+#top-bar-message {
+    display: inline-block; /* Necesario para las transiciones */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Animación de fundido suave */
+}
+
+
+/* ============================================= */
+/* SECCIÓN CATEGORÍAS PRO (NUEVO DISEÑO)
+/* ============================================= */
+.categorias-pro {
+    padding: 1rem 0 5rem 0;
+}
+
+.categorias-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.categorias-header h2 {
+    font-size: 3.5rem;
+    color: var(--color-primario);
+}
+
+.categorias-header p {
+    font-size: 1.8rem;
+    color: #757575;
+}
+
+.categorias-pro-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 3rem;
+}
+@media (min-width: 768px) {
+    .categorias-pro-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.categoria-card {
+    display: block;
+    position: relative;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+}
+
+.categoria-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.categoria-card .card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease;
+}
+
+.categoria-card:hover .card-bg {
+    transform: scale(1.05); /* Sutil efecto de zoom al pasar el mouse */
+}
+
+.categoria-card .card-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    /* Superposición oscura para que el texto resalte */
+    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.card-icono {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px); /* Efecto de vidrio esmerilado */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-icono img {
+    width: 55px;
+    height: 55px;
+}
+
+.card-content h3 {
+    font-size: 2.8rem;
+    color: var(--color-blanco);
+    font-weight: 700;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+/* ============================================= */
+/* SECCIÓN DE ENVÍOS (DISEÑO LIMPIO Y MINIMALISTA)
+/* ============================================= */
+.seccion-envios-pro {
+    /* Quitamos la imagen de fondo, ahora usa el color del body */
+    padding: 6rem 0;
+    border-top: 1px solid var(--color-gris); /* Separador sutil */
+    border-bottom: 1px solid var(--color-gris);
+}
+
+.contenedor-envios-pro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 900px; /* Limitamos el ancho para que no se extienda demasiado */
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.envios-icono-pro img {
+    height: 200px; /* Puedes ajustar la altura de tu imagen aquí */
+    width: auto;   /* El ancho se ajusta automáticamente para no deformar la imagen */
+}
+
+.envios-texto-pro {
+    color: var(--color-texto); /* Color de texto normal */
+}
+
+.envios-texto-pro h2 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--color-primario); /* Color de texto principal */
+    margin: 0;
+}
+
+.envios-texto-pro p {
+    font-size: 1.8rem;
+    color: #555; /* Un gris oscuro para el subtítulo */
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Rediseñamos el botón a un estilo "outline" más elegante */
+.btn-envio {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+    padding: 1.2rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-envio:hover {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    transform: translateY(-3px);
+}
+
+/* Hacemos que se apile y se centre en móvil */
+@media (max-width: 767px) {
+    .contenedor-envios-pro {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* ============================================= */
+/* SECCIÓN DE INTRODUCCIÓN
+/* ============================================= */
+.seccion-intro {
+    padding: 1rem 0;
+    background-color: var(--color-blanco);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 2rem;
+    align-items: center;
+}
+
+.intro-titulo {
+        text-align: center;
+    }
+.intro-titulo h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--color-primario);
+    margin: 0;
+}
+
+/* Resaltamos parte del título con el color de acento */
+.intro-titulo span {
+    color: var(--color-acento);
+}
+
+.intro-texto p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #222222;
+    text-align: center;
+}
+
+/* Separador visual elegante */
+.separador-elegante {
+    height: 1px;
+    background-color: var(--color-gris);
+}
+/* En escritorio, usamos dos columnas */
+@media (min-width: 768px) {
+    .intro-titulo h2 {
+    font-size: 3 rem;
+}
+    .intro-texto p {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    text-align: left;
+}
+    
+        .seccion-intro {
+            padding: 0rem 0 3rem 0;
+        }
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Columnas de igual tamaño */
+        gap: 6rem; /* Espacio entre las columnas (donde irá la línea) */
+        align-items: center;
+
+        /* --- CAMBIOS CLAVE AQUÍ --- */
+        max-width: 900px; /* Hacemos el bloque completo más angosto */
+        margin: 0 auto;   /* Centramos ese bloque en la página */
+    }
+
+    /* Alineamos el título a la derecha (hacia la línea) */
+    .intro-titulo {
+        text-align: right;
+    }
+
+    /* Preparamos la columna de texto */
+    .intro-texto {
+        position: relative;
+    }
+
+    /* Creamos la línea vertical en el medio del espacio */
+    .intro-texto::before {
+        content: '';
+        position: absolute;
+        left: -3rem; /* La mitad exacta del 'gap' de 6rem */
+        top: 50%;
+        transform: translateY(-50%);
+        
+        width: 2px;
+        height: 70%; /* Altura de la línea (puedes ajustarla) */
+        background-color: var(--color-primario);
+    }
+}
+
+/* ============================================= */
+/* ESTILOS PARA EL BUSCADOR RESPONSIVO
+/* ============================================= */
+
+/* Estilo base para los contenedores de búsqueda */
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 20px;
+    color: #aaa;
+    font-size: 1.6rem;
+    pointer-events: none; /* Evita que el ícono sea clickeable */
+}
+
+.search-input {
+    width: 100%;
+    padding: 1.2rem 2rem 1.2rem 5rem; /* Padding a la izquierda para el ícono */
+    font-size: 1.6rem;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: var(--fuente-principal);
+}
+
+.search-input:focus {
+    box-shadow: 0 0 0 3px rgba(245, 124, 0, 0.4);
+    border-color: var(--color-acento);
+}
+
+/* Estilos para el contenedor de resultados */
+.search-results {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-blanco);
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin-top: 0.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.search-result-item {
+    display: block;
+    padding: 1.2rem 2rem;
+    color: var(--color-texto);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-gris);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: var(--color-gris);
+}
+
+.no-results {
+    padding: 1.2rem 2rem;
+    color: #888;
+}
+
+
+/* --- Lógica de Visibilidad (Mobile First) --- */
+
+/* Por defecto (MÓVIL), ocultamos el buscador de escritorio */
+.search-wrapper-desktop {
+    display: none;
+}
+.seccion-busqueda {
+    padding: 2rem 0 0 0;
+}
+
+/* Para ESCRITORIO (a partir de 960px), cambiamos la visibilidad */
+@media (min-width: 960px) {
+    .search-wrapper-desktop {
+        display: flex; /* Mostramos el buscador de escritorio */
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .search-wrapper-mobile {
+        display: none; /* Ocultamos el buscador de móvil */
+
+    }
+    .seccion-busqueda{
+        padding: 0;
+    }
+    
+    /* Ajustamos el header para que contenga el buscador en el centro */
+    .header-content {
+        display: grid;
+        grid-template-columns: auto 1fr auto; /* Logo | Buscador | Menú */
+        align-items: center;
+        width: 100%;
+        gap: 2rem;
+    }
+}

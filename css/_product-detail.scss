@@ -1,0 +1,164 @@
+.producto-detalle {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 4rem;
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    .producto-detalle {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.detalle-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.detalle-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.detalle-categoria {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    align-self: flex-start;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.detalle-nombre {
+    font-size: 3.5rem;
+    color: #333;
+    margin: 0 0 1rem 0;
+}
+
+.detalle-descripcion {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.detalle-precio {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 2.5rem;
+}
+
+.btn-comprar {
+    background-color: #25D366;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    max-width: 300px;
+}
+
+.btn-comprar:hover {
+    background-color: #1DA851;
+}
+
+.detalle-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* NUEVO ESTILO PARA EL BOTÓN DE VOLVER */
+.btn-volver {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    align-self: flex-start;
+    transition: transform 0.3s ease;
+    grid-column: 1 / -1; /* ¡AÑADIDO! Hace que el botón ocupe todas las columnas */
+}
+
+.btn-volver:hover {
+    transform: translateX(-5px);
+}
+/* ... al final de tu archivo ... */
+
+.detalle-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.tag-detalle {
+    background-color: var(--color-gris);
+    color: #555;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+/* ... dentro de tu archivo ... */
+
+.producto-detalle {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 4rem;
+    align-items: start;
+}
+
+/* --- ¡AQUÍ ESTÁ LA ACTUALIZACIÓN! --- */
+@media (min-width: 768px) {
+    .producto-detalle {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Limitamos el ancho del contenedor de la imagen en escritorio */
+    .detalle-imagen {
+        max-width: 450px;
+        width: 100%; /* Asegura que siga siendo responsivo si la pantalla se encoge */
+        margin: 0 auto; /* Centra el contenedor si el espacio es mayor */
+    }
+}
+
+.detalle-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ... al final de tu archivo ... */
+
+.precio-container-detalle {
+    margin-bottom: 2.5rem;
+}
+
+/* Estilo para el precio original tachado (igual que en la otra hoja de estilos) */
+.precio-original {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* El estilo .detalle-precio que ya tenías ahora funcionará como el precio con descuento */
+.detalle-precio {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin: 0;
+}

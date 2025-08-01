@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distrisur del Valle | Distribuidora de productos veterinarios en Cali</title>
+    <meta name="description" content="Encuentra los mejores insumos agropecuarios, medicamentos y productos veterinarios en Cali. Asesoría experta en veterinaria.">
+    <link rel="icon" type="image/png" href="img/logodistri.ico">
+    <link rel="apple-touch-icon" href="img/logodistri.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <style>body{opacity:0;transition:opacity .5s;}</style>
+    <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all';this.onload=null;document.body.style.opacity=1;">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+    
+    <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+       <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELJYJFW55V"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ELJYJFW55V');
+        </script>
+    </head>
+ 
+<body>
+    <div id="top-bar">
+        <span id="top-bar-message"></span>
+    </div>
+    <header class="site-header">
+        <div class="container-header">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/">
+                        <img src="img/logo-distrisur.webp" alt="Logo de la empresa">
+                    </a>
+                </div>
+            <h1 class="visually-hidden">Distrisur del Valle - Insumos Agropecuarios de Calidad en Cali</h1>
+            
+            <div class="search-wrapper search-wrapper-desktop">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input-desktop" class="search-input" placeholder="Buscar productos...">
+                <div id="search-results-desktop" class="search-results"></div>
+            </div>
+                <nav class="main-nav">
+                    <input type="checkbox" id="menu-toggle">
+                    <label for="menu-toggle" class="menu-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <ul class="menu">
+                        <li><a href="/" class="btn-menu btn-select">Inicio</a></li>
+                        <li><a href="/productos" class="btn-menu ">Productos</a></li>
+                        <li><a href="/contacto" class="btn-menu">Contacto</a></li>
+                        <!-- <li><a href="#noticias" class="btn-menu">Noticias</a></li> -->
+                        <!-- <li><a href="/" class="btn-menu">Nosotros</a></li> -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main  class="contenedor">
+        <section class="seccion-busqueda">
+        <div class="contenedor">
+            <div class="search-wrapper search-wrapper-mobile">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input-mobile" class="search-input" placeholder="Buscar productos...">
+                <div id="search-results-mobile" class="search-results"></div>
+            </div>
+        </div>
+    </section>
+
+
+           <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slide">
+                        <img src="img/imagencover-1.webp" alt="Paisaje 1">
+                    </div>
+                    <div class="slide">
+                        <img src="img/imagencover-2.webp" alt="Paisaje 2">
+                    </div>
+                    <!-- <div class="slide">
+                        <img src="img/imagencover-3.jpeg" alt="Paisaje 3">
+                    </div> -->
+             </div>
+                 <a href="/productos" class="btn-slider">Ver todos los Productos</a>
+
+        <div class="slider-dots"></div>
+    </div>
+   
+
+    <section class="categorias-pro">
+    <div class="contenedor">
+        <div class="categorias-header">
+            <h2>Explora Nuestras Soluciones</h2>
+            <p>Encuentra productos especializados para cada sector.</p>
+        </div>
+        <div class="categorias-pro-grid">
+            <a href="productos?filtro=mascotas" class="categoria-card">
+                <div class="card-bg" style="background-image: url('img/mascotasicono.webp');"></div>
+                <div class="card-content">
+                    <div class="card-icono">
+                        <img src="img/paw.svg" alt="Icono Mascotas">
+                    </div>
+                    <h3>Mascotas</h3>
+                </div>
+            </a>
+
+            <a href="productos?filtro=bovinos" class="categoria-card">
+                <div class="card-bg" style="background-image: url('img/bovinoico.webp');"></div>
+                <div class="card-content">
+                    <div class="card-icono">
+                        <img src="img/cow.png" alt="Icono Bovinos">
+                    </div>
+                    <h3>Bovinos</h3>
+                </div>
+            </a>
+
+            <a href="productos?filtro=equinos" class="categoria-card">
+                <div class="card-bg" style="background-image: url('img/equinoico.webp');"></div>
+                <div class="card-content">
+                    <div class="card-icono">
+                        <img src="img/caballo.png" alt="Icono Equinos">
+                    </div>
+                    <h3>Equinos</h3>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<section class="seccion-intro">
+    <div class="contenedor intro-grid">
+        <div class="intro-titulo">
+            <h2>Soluciones Veterinarias <br><span>de Alta Calidad</span></h2>
+        </div>
+        <div class="intro-texto">
+            <p>En Distrisur del valle ofrecemos soluciones confiables y asesoría experta para potenciar la salud y productividad de tus animales y el campo. Tu éxito es nuestro compromiso.</p>
+        </div>
+    </div>
+    <div class="contenedor">
+        <div class="separador-elegante"></div>
+    </div>
+</section>
+
+    <section class="productos-destacados">
+        <h2>productos destacados</h2>
+        <nav class="content-productosdestacados">
+            <div class="grid-productos">
+                    
+            </div>
+        </nav>
+         <div class="ver-todos-container">
+        <a href="/productos" class="btn-secundario">Ver Todos los Productos</a>
+    </div>
+    </section>
+
+<section class="seccion-marcas-pro">
+    <div class="contenedor">
+        <h2>Nuestras Marcas Aliadas</h2>
+        <div class="logos-container">
+            <div class="logos-slider">
+                <img src="img/marca1.webp" alt="Logo Marca 1">
+                <img src="img/marca2.webp" alt="Logo Marca 2">
+                <img src="img/marca3.webp" alt="Logo Marca 3">
+                <img src="img/marca4.webp" alt="Logo Marca 4">
+                <img src="img/marca5.webp" alt="Logo Marca 5">
+
+                <img src="img/marca1.webp" alt="Logo Marca 1">
+                <img src="img/marca2.webp" alt="Logo Marca 2">
+                <img src="img/marca3.webp" alt="Logo Marca 3">
+                <img src="img/marca4.webp" alt="Logo Marca 4">
+                <img src="img/marca5.webp" alt="Logo Marca 5">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="seccion-envios-pro">
+    <div class="contenedor-envios-pro">
+        <div class="envios-icono-pro">
+            <img src="img/domicilioimg.png" alt="Domiciliario de Distrisur del Valle">
+        </div>
+        <div class="envios-texto-pro">
+            <h2>Envíos a Nivel Nacional</h2>
+            <p>Entrega inmediata para domicilios dentro de la ciudad de Cali.</p>
+            <a href="https://wa.me/573232866467?text=Hola,%20quiero%20cotizar%20el%20envío%20a%20la%20Ciudad%20de:%20" class="btn-envio" target="_blank" rel="noopener noreferrer">Cotizar Envío</a>
+        </div>
+    </div>
+</section>
+
+ 
+
+   <!-- <section class="seccion-ubicacion-hibrida">
+    <div class="contenedor grid-ubicacion">
+        <div class="info-columna">
+            <h2>Encuéntranos</h2>
+            <p>Estamos listos para atenderte. Visita nuestras instalaciones y recibe asesoría experta de nuestro equipo para potenciar tu producción.</p>
+            <ul class="lista-contacto">
+                    <div class="txt-contacto">
+                        <strong>Dirección</strong>
+                        <span>Cra 54 # 7 - 118</span>
+                    </div>
+                    <div  class="txt-contacto">
+                        <strong>Teléfono</strong>
+                        <span>323 286 6467 - 315 496 1707</span>
+                    </div>
+            </ul>
+        </div>
+
+        <div class="mapa-columna">
+            <div class="mapa-circular-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.593652876543!2d-76.5348259857368!3d3.448532451390424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a661f7356f7b%3A0x95b91a22d2b85e6!2sCali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1628192634571!5m2!1ses!2sco" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+    </main>
+
+    <footer class="footer">
+    <div class="contenedor grid-footer">
+        <div class="footer-columna">
+            <img src="img/logo-distrisur-blanco.webp" alt="Logo Distrisur del Valle en blanco" class="footer-logo">
+            <p>Soluciones integrales para el campo, comprometidos con la productividad y el bienestar animal.</p>
+        </div>
+
+        <div class="footer-columna">
+            <h3>Navegación</h3>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/productos">Productos</a></li>
+                <!-- <li><a href="/">Nosotros</a></li> -->
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-columna">
+            <h3>Contacto</h3>
+            <ul>
+                <li><i class="fa-solid fa-phone"></i> 323 286 6467</li>
+                <li><i class="fa-solid fa-inbox"></i> distrisurdelvallemercadeo@gmail.com</li>
+            </ul>
+        </div>
+
+        <div class="footer-columna">
+            <h3>Síguenos</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61578264495843" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/distrisurdelvalle.co/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>© 2025 Distrisur del Valle. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+    <div id="whatsapp-flotante-container"></div>
+    <!-- <script src="js/database.js"></script>  -->
+    <script src="js/main.js" defer></script> 
+    <script src="js/script.js" defer></script>
+    <script src="js/script-wpp-btn.js" defer></script>
+    <script src="js/headerscroll.js" defer></script>
+    <script src="js/top-bar.js" defer></script>
+</body>
+</html>

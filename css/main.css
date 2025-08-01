@@ -1,0 +1,2035 @@
+@charset "UTF-8";
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+:root {
+  --fuente: "Poppins", sans-serif;
+  --color-primario: #0b3607;
+  --color-blanco: #f7f7f7;
+  --color-gris: #e6e6e6;
+  --color-naranja: #D94F13;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* ============================================= */
+/* ESTILOS BASE PARA ENCABEZADOS (TIPOGRAFÍA)
+/* ============================================= */
+h1, h2, h3, h4, h5, h6 {
+  /* Define estilos que todos los encabezados compartirán */
+  font-weight: 700; /* O el grosor que prefieras por defecto */
+  line-height: 1.2;
+  color: var(--color-primario); /* Usando tus variables de color */
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Ahora, define un tamaño específico para cada nivel de encabezado */
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 3.4rem;
+}
+
+h4 {
+  font-size: 2.2rem;
+}
+
+/* Puedes añadir h5 y h6 si los llegas a usar */
+h5 {
+  font-size: 1.8rem;
+}
+
+h6 {
+  font-size: 1.6rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-blanco);
+  font-size: 1.6rem;
+  font-family: var(--fuente);
+  line-height: 1.5;
+  min-height: 100vh; /* El body ocupa, como mínimo, toda la altura de la pantalla */
+}
+
+.contenedor {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .contenedor {
+    margin: 0 3rem;
+  }
+}
+/* .boton-productos{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    justify-content: center;
+    background-color: var(--color-primario); 
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.8s ease, transform 0.3s ease;
+    z-index: 10; 
+} */
+/* --- Menú Hamburguesa (oculto en escritorio) --- */
+#menu-toggle,
+.menu-icon {
+  display: none;
+}
+
+/* --- Contenedor Principal --- */
+.slider-container {
+  width: 100%;
+  height: 350px; /* 70% de la altura de la pantalla */
+  position: relative; /* Clave para posicionar los puntos */
+  overflow: hidden; /* Oculta las imágenes que no están activas */
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  touch-action: pan-y;
+}
+
+@media (max-width: 768px) {
+  .slider-container {
+    height: 200px;
+    border-radius: 5px;
+    margin: 1rem 0;
+  }
+}
+/* --- Contenedor de las Imágenes --- */
+.slider-wrapper {
+  display: flex; /* Pone las imágenes en una fila horizontal */
+  height: 100%;
+  /* La transición que crea el efecto de deslizamiento */
+  transition: transform 0.8s ease-in-out;
+}
+
+/* --- Cada Imagen (Slide) --- */
+.slide {
+  min-width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+  filter: brightness(0.8);
+}
+
+/* --- Círculos de Navegación --- */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px; /* Espacio entre los puntos */
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Estilo del punto activo */
+.dot.active {
+  background-color: #ffffff;
+}
+
+.productos-titulo h3 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .productos-titulo h3 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+/* Footer */
+.footer {
+  background-color: var(--color-primario);
+  padding: 1rem 0;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.footer__texto {
+  color: var(--color-blanco);
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Footer */
+/* ... añade esto al final de tu style.css ... */
+/* Mapa */
+.seccion-ubicacion {
+  margin-top: 4rem;
+  padding: 4rem 0;
+  background-color: var(--color-gris);
+}
+
+.informacion__ubicacion {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna por defecto para móviles */
+  gap: 3rem;
+  align-items: center;
+  max-width: 1200px; /* Limita el ancho en pantallas grandes */
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .informacion__ubicacion {
+    /* Dos columnas en tablets y escritorio */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.texto_mapa h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.mapa-container {
+  overflow: hidden; /* Asegura que el iframe no se desborde */
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  /* Mantiene la proporción del video/mapa */
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* Proporción 4:3 (75%) o 56.25% para 16:9 */
+}
+
+.mapa-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0; /* Quita el borde feo del iframe */
+}
+
+/* Ajusta los estilos de los productos que ya tenías */
+.productos-destacados {
+  background-color: transparent; /* Quita el fondo gris si no lo quieres */
+  width: 100%;
+  min-height: 300px; /* Usa min-height para que se ajuste al contenido */
+  text-align: center;
+}
+
+.productos-destacados h2 {
+  font-size: 2rem;
+  background-color: var(--color-primario);
+  margin: 1rem 0 1rem 0;
+  border-radius: 10px 10px 0px 0px;
+  color: var(--color-blanco);
+  padding: 0.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .productos-destacados h2 {
+    max-width: 400px;
+    border-radius: 0px 20px 0px 0px;
+  }
+}
+/* Estilos para el nuevo botón en el slider */
+/* Contenedor para centrar el botón */
+.ver-todos-container {
+  text-align: center;
+  margin-top: 3rem; /* Espacio arriba del botón */
+}
+
+/* Estilo para un botón secundario o de "ver más" */
+.btn-secundario {
+  display: inline-block; /* Para que el padding funcione correctamente */
+  border: 2px solid var(--color-primario);
+  color: var(--color-primario);
+  background-color: transparent;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-secundario:hover {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+/* ============================================= */
+/* SECCIÓN MARCAS PRO (NUEVO DISEÑO)
+/* ============================================= */
+.seccion-marcas-pro {
+  padding: 6rem 0;
+  background-color: var(--color-blanco);
+  border-top: 1px solid var(--color-gris);
+  border-bottom: 1px solid var(--color-gris);
+}
+
+.seccion-marcas-pro h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #a0a0a0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4rem;
+}
+
+.logos-container {
+  overflow: hidden; /* Oculta el desbordamiento del carrusel */
+  position: relative;
+  width: 100%;
+}
+
+/* Efecto de degradado en los bordes para un look más suave */
+.logos-container::before,
+.logos-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logos-container::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--color-blanco));
+}
+
+.logos-container::after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--color-blanco));
+}
+
+.logos-slider {
+  display: flex;
+  /* Ancho total: (ancho por logo + gap) * número total de logos */
+  /* Ej: (180px + 30px) * 10 logos = 2100px */
+  width: calc(1800px + 30rem);
+  gap: 3rem;
+  /* ¡La animación! */
+  animation: scroll 30s linear infinite;
+}
+
+/* Pausar la animación al pasar el mouse por encima */
+.logos-slider:hover {
+  animation-play-state: paused;
+}
+
+/* Estilo para cada logo */
+.logos-slider img {
+  height: 50px; /* Altura unificada */
+  width: 180px; /* Ancho unificado */
+  -o-object-fit: contain;
+     object-fit: contain; /* Asegura que no se deformen */
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.logos-slider img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Definición de la animación de scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Se mueve la mitad de su ancho (la lista original) */
+    transform: translateX(calc(-900px - 15rem));
+  }
+}
+/* Para pantallas de tablets y móviles (hasta 1024px de ancho) */
+@media (max-width: 1024px) {
+  /* Hacemos que los puntos del slider ignoren cualquier clic o toque */
+  .slider-dots {
+    pointer-events: none;
+  }
+}
+/* 1. Contenedor Principal (lo llamamos swiper-container para aplicar los estilos de la caja) */
+.swiper-container {
+  width: 100%;
+  height: 500px;
+  position: relative; /* ¡CLAVE! Para posicionar el botón y los puntos */
+  margin: 2rem auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Para que las esquinas redondeadas se apliquen a las imágenes */
+}
+
+/* El contenedor interno de Swiper debe ocupar todo el espacio */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* 2. Estilo para las imágenes dentro de cada slide */
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Mantiene la imagen cubriendo el espacio sin deformarse */
+  filter: brightness(0.8);
+}
+
+/* 3. Estilo para los Puntos de Navegación */
+/* Swiper usa .swiper-pagination para el contenedor de los puntos */
+.swiper-pagination {
+  position: absolute;
+  bottom: 20px !important; /* !important para sobreescribir el estilo base de Swiper */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* Swiper usa .swiper-pagination-bullet para cada punto individual */
+.swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 1; /* Asegurarnos que siempre sea visible */
+  transition: background-color 0.3s ease;
+}
+
+/* Swiper usa .swiper-pagination-bullet-active para el punto activo */
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #ffffff;
+}
+
+/* 4. Estilo para el Botón Central (¡Funciona exactamente igual!) */
+.btn-slider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-slider:hover {
+  background-color: #0f4a0a;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .btn-slider {
+    font-size: 2rem;
+    padding: 15px 30px;
+  }
+}
+/* ============================================= */
+/* 7. SECCIÓN UBICACIÓN HÍBRIDA (DISEÑO FINAL)
+/* ============================================= */
+.seccion-ubicacion-hibrida {
+  padding: 8rem 0;
+  background-color: var(--color-blanco);
+  border-top: 1px solid var(--color-gris);
+}
+
+.grid-ubicacion {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna por defecto (móvil) */
+  gap: 4rem;
+  align-items: center;
+}
+
+/* En pantallas de 768px o más (tablets y escritorio)... */
+@media (min-width: 768px) {
+  .grid-ubicacion {
+    grid-template-columns: 1fr 1fr;
+    /* --- LÍNEAS NUEVAS PARA CENTRAR EL BLOQUE --- */
+    max-width: 980px; /* Le damos un ancho máximo más pequeño que el contenedor principal */
+    margin: 0 auto; /* Centramos este contenedor de grid */
+  }
+}
+/* Estilos para la columna de información */
+.info-columna h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+}
+
+.info-columna p {
+  font-size: 1.8rem;
+  color: #1d1d1d;
+  margin-bottom: 3rem;
+}
+
+.lista-contacto {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-contacto .txt-contacto {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.lista-contacto strong {
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+.lista-contacto span {
+  color: #1d1d1d;
+}
+
+/* Estilos para la columna del mapa */
+.mapa-columna {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapa-circular-container {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 8px solid var(--color-blanco);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.mapa-circular-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 767px) {
+  /* Con solo esta línea, todo el texto adentro se centrará */
+  .info-columna {
+    text-align: center;
+  }
+}
+/* ============================================= */
+/* 6. FOOTER (NUEVO DISEÑO)
+/* ============================================= */
+.footer {
+  background-color: var(--color-primario);
+  color: #e0e0e0;
+  padding: 6rem 0 0;
+}
+
+.grid-footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 4rem;
+  padding-bottom: 4rem;
+}
+
+.footer-columna h3 {
+  font-size: 2rem;
+  color: var(--color-blanco);
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.footer-logo {
+  max-width: 180px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-columna p {
+  font-size: 1.5rem;
+  line-height: 1.7;
+}
+
+.footer-columna ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-columna ul li {
+  margin-bottom: 1rem;
+}
+
+.footer-columna ul a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-columna ul a:hover {
+  color: var(--color-acento);
+  padding-left: 5px;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  color: var(--color-primario);
+  background-color: var(--color-blanco);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.8rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  transform: translateY(-3px);
+}
+
+.footer-copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #a0a0a0;
+}
+
+#top-bar {
+  background-color: var(--color-primario); /* Tu color verde principal */
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 200;
+  width: 100%;
+}
+
+#top-bar-message {
+  display: inline-block; /* Necesario para las transiciones */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; /* Animación de fundido suave */
+}
+
+/* ============================================= */
+/* SECCIÓN CATEGORÍAS PRO (NUEVO DISEÑO)
+/* ============================================= */
+.categorias-pro {
+  padding: 1rem 0 5rem 0;
+}
+
+.categorias-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.categorias-header h2 {
+  font-size: 3.5rem;
+  color: var(--color-primario);
+}
+
+.categorias-header p {
+  font-size: 1.8rem;
+  color: #757575;
+}
+
+.categorias-pro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .categorias-pro-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.categoria-card {
+  display: block;
+  position: relative;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.categoria-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.categoria-card .card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+.categoria-card:hover .card-bg {
+  transform: scale(1.05); /* Sutil efecto de zoom al pasar el mouse */
+}
+
+.categoria-card .card-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  /* Superposición oscura para que el texto resalte */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.card-icono {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px); /* Efecto de vidrio esmerilado */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-icono img {
+  width: 55px;
+  height: 55px;
+}
+
+.card-content h3 {
+  font-size: 2.8rem;
+  color: var(--color-blanco);
+  font-weight: 700;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================= */
+/* SECCIÓN DE ENVÍOS (DISEÑO LIMPIO Y MINIMALISTA)
+/* ============================================= */
+.seccion-envios-pro {
+  /* Quitamos la imagen de fondo, ahora usa el color del body */
+  padding: 6rem 0;
+  border-top: 1px solid var(--color-gris); /* Separador sutil */
+  border-bottom: 1px solid var(--color-gris);
+}
+
+.contenedor-envios-pro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 900px; /* Limitamos el ancho para que no se extienda demasiado */
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.envios-icono-pro img {
+  height: 200px; /* Puedes ajustar la altura de tu imagen aquí */
+  width: auto; /* El ancho se ajusta automáticamente para no deformar la imagen */
+}
+
+.envios-texto-pro {
+  color: var(--color-texto); /* Color de texto normal */
+}
+
+.envios-texto-pro h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--color-primario); /* Color de texto principal */
+  margin: 0;
+}
+
+.envios-texto-pro p {
+  font-size: 1.8rem;
+  color: #555; /* Un gris oscuro para el subtítulo */
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Rediseñamos el botón a un estilo "outline" más elegante */
+.btn-envio {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--color-primario);
+  border: 2px solid var(--color-primario);
+  padding: 1.2rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-envio:hover {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  transform: translateY(-3px);
+}
+
+/* Hacemos que se apile y se centre en móvil */
+@media (max-width: 767px) {
+  .contenedor-envios-pro {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* ============================================= */
+/* SECCIÓN DE INTRODUCCIÓN
+/* ============================================= */
+.seccion-intro {
+  padding: 1rem 0;
+  background-color: var(--color-blanco);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna en móvil */
+  gap: 2rem;
+  align-items: center;
+}
+
+.intro-titulo {
+  text-align: center;
+}
+
+.intro-titulo h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-primario);
+  margin: 0;
+}
+
+/* Resaltamos parte del título con el color de acento */
+.intro-titulo span {
+  color: var(--color-acento);
+}
+
+.intro-texto p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #222222;
+  text-align: center;
+}
+
+/* Separador visual elegante */
+.separador-elegante {
+  height: 1px;
+  background-color: var(--color-gris);
+}
+
+/* En escritorio, usamos dos columnas */
+@media (min-width: 768px) {
+  .intro-titulo h2 {
+    font-size: 3 rem;
+  }
+  .intro-texto p {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+  .seccion-intro {
+    padding: 0rem 0 3rem 0;
+  }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Columnas de igual tamaño */
+    gap: 6rem; /* Espacio entre las columnas (donde irá la línea) */
+    align-items: center;
+    /* --- CAMBIOS CLAVE AQUÍ --- */
+    max-width: 900px; /* Hacemos el bloque completo más angosto */
+    margin: 0 auto; /* Centramos ese bloque en la página */
+  }
+  /* Alineamos el título a la derecha (hacia la línea) */
+  .intro-titulo {
+    text-align: right;
+  }
+  /* Preparamos la columna de texto */
+  .intro-texto {
+    position: relative;
+  }
+  /* Creamos la línea vertical en el medio del espacio */
+  .intro-texto::before {
+    content: "";
+    position: absolute;
+    left: -3rem; /* La mitad exacta del 'gap' de 6rem */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 70%; /* Altura de la línea (puedes ajustarla) */
+    background-color: var(--color-primario);
+  }
+}
+/* ============================================= */
+/* ESTILOS PARA EL BUSCADOR RESPONSIVO
+/* ============================================= */
+/* Estilo base para los contenedores de búsqueda */
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-wrapper i {
+  position: absolute;
+  left: 20px;
+  color: #aaa;
+  font-size: 1.6rem;
+  pointer-events: none; /* Evita que el ícono sea clickeable */
+}
+
+.search-input {
+  width: 100%;
+  padding: 1.2rem 2rem 1.2rem 5rem; /* Padding a la izquierda para el ícono */
+  font-size: 1.6rem;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: var(--fuente-principal);
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 3px rgba(245, 124, 0, 0.4);
+  border-color: var(--color-acento);
+}
+
+/* Estilos para el contenedor de resultados */
+.search-results {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-blanco);
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  margin-top: 0.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.search-result-item {
+  display: block;
+  padding: 1.2rem 2rem;
+  color: var(--color-texto);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-gris);
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background-color: var(--color-gris);
+}
+
+.no-results {
+  padding: 1.2rem 2rem;
+  color: #888;
+}
+
+/* --- Lógica de Visibilidad (Mobile First) --- */
+/* Por defecto (MÓVIL), ocultamos el buscador de escritorio */
+.search-wrapper-desktop {
+  display: none;
+}
+
+.seccion-busqueda {
+  padding: 2rem 0 0 0;
+}
+
+/* Para ESCRITORIO (a partir de 960px), cambiamos la visibilidad */
+@media (min-width: 960px) {
+  .search-wrapper-desktop {
+    display: flex; /* Mostramos el buscador de escritorio */
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .search-wrapper-mobile {
+    display: none; /* Ocultamos el buscador de móvil */
+  }
+  .seccion-busqueda {
+    padding: 0;
+  }
+  /* Ajustamos el header para que contenga el buscador en el centro */
+  .header-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* Logo | Buscador | Menú */
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+  }
+}
+/* --- Estilos del Header --- */
+.container-header {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-header {
+  background-color: var(--color-blanco);
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  top: 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo --- */
+.logo img {
+  max-height: 55px;
+  display: block;
+}
+
+/* --- Navegación Principal --- */
+.main-nav .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.main-nav .menu li {
+  margin-left: 25px;
+}
+
+.btn-menu {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--color-primario);
+  font-weight: 400;
+  padding: 10px;
+  border-radius: 15px;
+  transition: color 0.3s ease, background-color 0.6s ease;
+}
+
+.btn-select {
+  color: var(--color-blanco);
+  background-color: var(--color-primario);
+}
+
+.btn-menu:hover {
+  color: var(--color-blanco);
+  background-color: var(--color-primario);
+}
+
+.site-header.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  opacity: 0.7;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.site-header.header-fixed:hover {
+  opacity: 1;
+}
+
+/* Se aplica para ocultar el header deslizándolo hacia arriba */
+.site-header.header-hidden {
+  transform: translateY(-100%);
+}
+
+.body-padding-header {
+  /* Ajusta este valor a la altura exacta de tu header */
+  padding-top: 65px;
+}
+
+@media (max-width: 960px) {
+  .btn-select {
+    background-color: var(--color-naranja);
+  }
+  .btn-menu:hover {
+    color: var(--color-blanco);
+    background-color: var(--color-naranja);
+  }
+  .btn-menu {
+    border-radius: 0px;
+  }
+  .main-nav .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 115px; /* Ajusta según la altura de tu header */
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  .main-nav .menu li {
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .main-nav .menu a {
+    display: block;
+    padding: 15px;
+  }
+  /* --- Lógica del Menú Hamburguesa --- */
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+  }
+  .menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  #menu-toggle:checked ~ .menu {
+    display: flex;
+  }
+  #menu-toggle:checked ~ .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  #menu-toggle:checked ~ .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle:checked ~ .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+  .site-header.header-fixed .main-nav .menu {
+    top: 85px; /* Ajusta este valor a la altura de tu header fijo */
+  }
+}
+/* Estilos para la sección principal de productos en productos.html */
+.seccion-productos .productos {
+  display: grid;
+  /* En pantallas pequeñas (móviles), los filtros se apilan sobre los productos */
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 2rem;
+}
+
+/* En pantallas más grandes (tablets/escritorio), creamos una barra lateral para los filtros */
+@media (min-width: 768px) {
+  .seccion-productos .productos {
+    /* Asigna 280px a la columna de filtros y el resto a los productos */
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    margin: 2rem 4rem;
+  }
+}
+/* --- SECCIÓN DE FILTROS --- */
+/* Contenedor principal de filtros con el padding que pediste */
+.productos-filtro {
+  display: flex;
+  flex-direction: column; /* Apila los grupos de filtros y el botón de limpiar */
+  gap: 2rem;
+  /* padding: 2rem; */
+  background-color: #f7f7f7; /* Un color de fondo suave */
+  border-radius: 15px;
+  height: -moz-fit-content;
+  height: fit-content; /* Se ajusta a la altura de su contenido */
+}
+
+/* Grupos individuales de filtros (ej. "Animal", "Tipo de Producto") */
+.filtro-grupo h3 {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.botones-grupo {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los botones pasen a la siguiente línea si no caben */
+  gap: 0.8rem; /* Espacio entre botones del mismo grupo */
+}
+
+/* Estilo ÚNICO y correcto para los botones de filtro */
+.btn-filtro {
+  width: auto; /* Ancho automático según el contenido */
+  padding: 8px 15px;
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 20px; /* Más redondeado para un look de "tag" */
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: var(--fuente);
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre un botón NO activo */
+.btn-filtro:not(.activo):hover {
+  background-color: #e9e9e9;
+  border-color: #ccc;
+  transform: translateY(-2px);
+}
+
+/* Estilo para el botón ACTIVO */
+.btn-filtro.activo {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  border-color: var(--color-primario);
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón para limpiar los filtros */
+.btn-limpiar {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem; /* Espacio extra arriba */
+}
+
+.btn-limpiar:hover {
+  background-color: var(--color-naranja);
+}
+
+/* --- SECCIÓN DE PRODUCTOS --- */
+/* OPTIMIZACIÓN: Grid adaptable para los productos */
+.grid-productos {
+  display: grid;
+  /* El grid se ajusta solo: creará columnas de mínimo 240px.
+     Esto reemplaza la necesidad de múltiples media queries. */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+/* Tarjeta individual de producto */
+.producto-content {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+.producto-content img {
+  width: 100%;
+  height: 200px; /* Reducimos un poco la altura para mejor balance */
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 1.5rem;
+}
+
+.producto-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex; /* Hacemos que el link también sea flexbox */
+  flex-direction: column;
+  flex-grow: 1; /* El link crece para ocupar el espacio */
+}
+
+.producto-content .titulo-producto {
+  font-weight: 600; /* Un poco menos grueso que "bold" */
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.descripcion-producto {
+  color: #666;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* La descripción crece para empujar el precio hacia abajo */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.precio-producto {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  margin-top: auto; /* Se asegura de que esté al fondo */
+}
+
+.producto-detalle {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 4rem;
+  align-items: start;
+}
+
+/* --- ¡AQUÍ ESTÁ LA ACTUALIZACIÓN! --- */
+@media (min-width: 768px) {
+  .producto-detalle {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Limitamos el ancho del contenedor de la imagen en escritorio */
+  .detalle-imagen {
+    max-width: 450px;
+    width: 100%; /* Asegura que siga siendo responsivo si la pantalla se encoge */
+    margin: 0 auto; /* Centra el contenedor si el espacio es mayor */
+  }
+}
+.detalle-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.filtro-movil-cabecera {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  /* Hacemos visible la cabecera y le damos estilo */
+  .filtro-movil-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  .filtro-movil-cabecera h2 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  .filtro-icono-flecha {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    transform: rotate(180deg);
+  }
+  /* Gira la flecha cuando el panel está abierto */
+  .filtro-movil-cabecera.activo .filtro-icono-flecha {
+    transform: rotate(360deg);
+  }
+  /* El contenido colapsable estará oculto por defecto con una altura máxima de 0 */
+  .filtro-contenido-colapsable {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    /* Los estilos de los filtros (botones, etc.) que ya tenías se mantienen */
+  }
+  /* Cuando tenga la clase 'abierto', se revela con una altura máxima grande */
+  .filtro-contenido-colapsable.abierto {
+    max-height: 1500px; /* Un valor grande para permitir que el contenido se expanda */
+    transition: max-height 0.4s ease-in;
+    padding-top: 2rem; /* Añade un espacio cuando está abierto */
+  }
+}
+/* Estilo para la etiqueta de descuento */
+.etiqueta-descuento {
+  position: absolute;
+  top: 15px;
+  left: -1px; /* Pequeño ajuste para que se alinee con el borde */
+  background-color: var(--color-naranja); /* Un rojo llamativo */
+  color: white;
+  padding: 5px 15px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 0 5px 5px 0;
+  z-index: 2; /* Para que esté por encima de la imagen */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor para alinear los precios correctamente */
+.precio-container {
+  margin-top: auto; /* Empuja el contenedor de precios al fondo */
+}
+
+/* Estilo para el precio original tachado */
+.precio-original {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Estilo para el nuevo precio con descuento */
+.precio-descuento {
+  color: var(--color-primario);
+  font-size: 2.2rem; /* Más grande, como pediste */
+  font-weight: 700;
+  margin: 0;
+}
+
+/* El estilo de .precio-producto se seguirá usando para los productos sin descuento */
+.precio-producto {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+
+.filtro-grupo {
+  margin-bottom: 2rem; /* Espacio entre grupos de filtros */
+}
+
+.filtro-grupo h3 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd; /* Línea separadora */
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.precio-original-desde {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+/* ============================================= */
+/* ESTILOS PARA LA PAGINACIÓN
+/* ============================================= */
+.paginacion-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding: 2rem 0;
+  flex-wrap: wrap; /* <-- AÑADE ESTA LÍNEA */
+}
+
+.btn-pagina {
+  border: 1px solid var(--color-gris);
+  background-color: var(--color-blanco);
+  color: var(--color-texto);
+  padding: 1rem 1.5rem;
+  min-width: 40px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  .btn-pagina {
+    /* Asegura que los botones de flecha tengan un buen tamaño */
+    width: 10px;
+    height: 42px;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+}
+.btn-pagina:hover {
+  background-color: var(--color-gris);
+  color: var(--color-primario);
+}
+
+.btn-pagina.activo {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  border-color: var(--color-primario);
+}
+
+.btn-pagina:disabled {
+  background-color: #f5f5f5;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.paginacion-ellipsis {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  color: var(--color-texto);
+  font-weight: 600;
+}
+
+/* --- Ocultar botones de navegación de paginación en móviles --- */
+@media (max-width: 768px) {
+  .btn-pag-nav {
+    display: none;
+  }
+}
+.anuncio-envios {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem; /* Espacio entre el ícono y el texto */
+  background-color: var(--color-blanco);
+  color: var(--color-primario);
+  padding: 1.2rem; /* Padding más pequeño para un look discreto */
+  border-radius: 5px;
+  margin-bottom: 3rem; /* Espacio para separarlo del contenido */
+}
+
+.anuncio-envios i {
+  font-size: 2.2rem;
+  color: var(--color-acento); /* Ícono en color naranja */
+}
+
+.anuncio-envios p {
+  margin: 0; /* Quitamos el margen por defecto del párrafo */
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.producto-detalle {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 4rem;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .producto-detalle {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.detalle-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detalle-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.detalle-categoria {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  align-self: flex-start;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.detalle-nombre {
+  font-size: 3.5rem;
+  color: #333;
+  margin: 0 0 1rem 0;
+}
+
+.detalle-descripcion {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.detalle-precio {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--color-primario);
+  margin-bottom: 2.5rem;
+}
+
+.btn-comprar {
+  background-color: #25D366;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  max-width: 300px;
+}
+
+.btn-comprar:hover {
+  background-color: #1DA851;
+}
+
+.detalle-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* NUEVO ESTILO PARA EL BOTÓN DE VOLVER */
+.btn-volver {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  align-self: flex-start;
+  transition: transform 0.3s ease;
+  grid-column: 1/-1; /* ¡AÑADIDO! Hace que el botón ocupe todas las columnas */
+}
+
+.btn-volver:hover {
+  transform: translateX(-5px);
+}
+
+/* ... al final de tu archivo ... */
+.detalle-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.tag-detalle {
+  background-color: var(--color-gris);
+  color: #555;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* ... dentro de tu archivo ... */
+.producto-detalle {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 4rem;
+  align-items: start;
+}
+
+/* --- ¡AQUÍ ESTÁ LA ACTUALIZACIÓN! --- */
+@media (min-width: 768px) {
+  .producto-detalle {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Limitamos el ancho del contenedor de la imagen en escritorio */
+  .detalle-imagen {
+    max-width: 450px;
+    width: 100%; /* Asegura que siga siendo responsivo si la pantalla se encoge */
+    margin: 0 auto; /* Centra el contenedor si el espacio es mayor */
+  }
+}
+.detalle-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ... al final de tu archivo ... */
+.precio-container-detalle {
+  margin-bottom: 2.5rem;
+}
+
+/* Estilo para el precio original tachado (igual que en la otra hoja de estilos) */
+.precio-original {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* El estilo .detalle-precio que ya tenías ahora funcionará como el precio con descuento */
+.detalle-precio {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--color-primario);
+  margin: 0;
+}/*# sourceMappingURL=main.css.map */
